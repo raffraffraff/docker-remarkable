@@ -11,3 +11,9 @@ cd docker-remarkable
 ./build.sh
 ./run.sh
 ```
+
+## Notes
+* `/usr/share/icons` and `/usr/share/themes` are mounted Remarkable is themed correctly
+* `~/.remarkable` is mounted so the config lives in your local home
+* `--privileged` is set because DBUS requires it (for now)
+* The container is large (~600mb) because desktop applications need a lot of libraries
