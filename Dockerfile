@@ -4,6 +4,7 @@ ARG USER
 ARG UID
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV NO_AT_BRIDGE=1
 
 RUN groupadd --gid ${UID} ${USER}
 RUN useradd --uid ${UID} --gid ${UID} --shell /bin/bash --create-home ${USER}
