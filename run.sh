@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# If ~/.remarkable does not exist, docker creates it during -v mount and it ends up owned by root!
+mkdir -p ${HOME}/.remarkable
+
+# Run remarkable:latest with your Xorg display, ~/.remarkable and ~/Documents mounted
 docker run \
   -it --rm \
   -e DISPLAY \
